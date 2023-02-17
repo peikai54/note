@@ -17,3 +17,5 @@
     - [Index.html 的小 tips](html整理/Index.html%E7%9A%84%E5%B0%8Ftips.md)
 
   - [JS 基础整理](JS基础整理/READEME.md)
+    - [数据类型](JS基础整理/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.md)
+    - [ES5 与 ES6 的作用域](JS基础整理/ES5%E4%B8%8EES6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F.md)
