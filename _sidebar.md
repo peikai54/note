@@ -13,3 +13,7 @@
     - [布局单位](css整理/%E5%B8%83%E5%B1%80%E5%8D%95%E4%BD%8D.md)
 
   - [html 笔记整理](html整理/READEME.md)
+
+    - [Index.html 的小 tips](html整理/Index.html%E7%9A%84%E5%B0%8Ftips.md)
+
+  - [JS 基础整理](JS基础整理/READEME.md)
