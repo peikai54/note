@@ -19,3 +19,4 @@
   - [JS 基础整理](JS基础整理/READEME.md)
     - [数据类型](JS基础整理/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.md)
     - [ES5 与 ES6 的作用域](JS基础整理/ES5%E4%B8%8EES6%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F.md)
+    - [this 指向](JS基础整理/this%E6%8C%87%E5%90%91.md)
