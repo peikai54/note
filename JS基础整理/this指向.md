@@ -2,7 +2,7 @@
 
 通常 this 的指向规则会被总结成四种情况：函数默认调用，隐式绑定(通过其他对象调用)，显式绑定(call,bind,apply 等函数)，new 绑定。
 
-但展开这四点之前，我个人觉得更重要的一点是要理解**函数的 this 指向与它的声明无关，只有函数被调用时，才能获取它的 this 指向。**
+但展开这四点之前，我个人觉得更重要的一点是要理解**非箭头函数的 this 指向与它的声明无关，只有函数被调用时，才能获取它的 this 指向。**箭头函数的绑定则放到最后再说。
 
 ### 默认绑定
 
@@ -129,3 +129,53 @@ bingThis(); // => a对象
 3. 这个新构建的对象被设置为函数调用的 this 绑定;
 
 4. 返回这个新创建的对象;
+
+### this 绑定优先级
+
+new 优先绑定 > 显示绑定 > 隐式绑定 > 默认绑定
+
+### 箭头函数的 this 绑定
+
+箭头函数的 this 比较特殊，它的 this 遵循作用域规则，把 this 作为一个普通变量往上一级寻找 this 的值。
+
+```javascript
+this.name = "全局";
+
+let arrowFunc = () => {
+  console.log(this.name);
+};
+
+let a = {
+  name: "a",
+  arrowFunc,
+};
+
+arrowFunc(); // "全局"
+
+a.arrowFunc(); // "全局"
+```
+
+箭头函数不遵循隐式绑定规则，而是直接往上级寻找 this 的值，因为上层是全局对象，所以直接指向了全局对象。
+
+### call 方法的实现
+
+call 方法的实现及步骤注释如下
+
+```javascript
+Function.prototype.myCall = function (context) {
+  // 在Function.prototype上定义该方法，才能保证只有函数对象能调用它
+  context.fn = this; // 因为隐式绑定规则，this指向最后调用它的函数对象，用这个方法可以获取调用者
+  context.fn(); // 调用同一个函数，但隐式绑定规则改变了this的指向
+  delete context.fn; // 避免变量污染
+};
+
+a = function () {
+  console.log(this.name);
+};
+
+let context = {
+  name: "context",
+};
+
+a.myCall(context); // context
+```
