@@ -99,7 +99,7 @@ apply 函数与 call 函数基本一样，唯一区别是原函数的入参会�
 
 #### bind 函数
 
-bind 函数与 call 函数也相似，只不过 bind 返回的是包含了初始参数和修改了 this 内部指向的一个拷贝，而不是该函数被调用以后得到的结果。
+bind 函数与 call 函数也相似，只不过 bind 返回的是包含了初始参数和修改了 this 内部指向的一个拷贝。而不是该函数被调用以后得到的结果。
 
 ```javascript
 function getThis() {
