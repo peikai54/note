@@ -122,4 +122,4 @@ const dog = new Dog();
 dog.born(); // a dog born
 ```
 
-虽然对前端来说，class 不算非常重要的资源
+虽然对前端来说，面向对象编程在实际开发里的运用不是很频繁，但 class 的理解对 React 的运用比较重要（虽然现在大部分都是函数组件了）。不管怎么样 class 这一语法糖的出现都让 javascript 的面向对象编程变得舒服很多。
