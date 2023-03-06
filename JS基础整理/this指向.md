@@ -163,10 +163,18 @@ call 方法的实现及步骤注释如下
 
 ```javascript
 Function.prototype.myCall = function (context) {
-  // 在Function.prototype上定义该方法，才能保证只有函数对象能调用它
-  context.fn = this; // 因为隐式绑定规则，this指向最后调用它的函数对象，用这个方法可以获取调用者
-  context.fn(); // 调用同一个函数，但隐式绑定规则改变了this的指向
-  delete context.fn; // 避免变量污染
+  if (typeof this !== "function") {
+    // 判断调用者是否为函数
+    console.error("Type Error");
+  }
+
+  const args = [...arguments]?.slice(1); // 获取传入的参数
+
+  context = context || {};
+  context.fn = this;
+  const result = context.fn(...args);
+  delete context.fn; // 避免污染属性
+  return result;
 };
 
 a = function () {
