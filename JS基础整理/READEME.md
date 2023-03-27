@@ -7,3 +7,5 @@
 - [this 指向](/JS基础整理/this指向)
 
 - [JS 的面向对象](/JS基础整理/JS的面向对象/README)
+
+- [JS 的深拷贝](/JS基础整理/JS%E7%9A%84%E6%B7%B1%E6%8B%B7%E8%B4%9D.md)
